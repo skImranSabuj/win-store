@@ -37,7 +37,7 @@ export const Topbar = ({ categories }: { categories: TCategory[] }) => {
               Sign In
             </Link>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mr-10">
             <button className="relative text-slate-600 hover:text-brand-accent">
               <Image
                 src={icons.userIcon}
@@ -56,7 +56,7 @@ export const Topbar = ({ categories }: { categories: TCategory[] }) => {
                 priority
               />
             </button>
-            <button className="relative text-slate-600 hover:text-brand-accent">
+            <button className="relative flex">
               <Image
                 src={icons.cartIcon}
                 alt="cart icon"
@@ -64,9 +64,10 @@ export const Topbar = ({ categories }: { categories: TCategory[] }) => {
                 height={24}
                 priority
               />
-              <span className="absolute -top-3 right-1 text-yellow-400 text-xs font-bold ">
+              <span className="absolute -top-3 left-3 text-yellow-400 text-xs font-bold ">
                 3
               </span>
+              <span className="ml-2">Cart</span>
             </button>
           </div>
         </div>

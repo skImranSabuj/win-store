@@ -23,7 +23,7 @@ const Navbar = () => {
               "Shop by brands",
               "Become a Vendor",
             ].map((item) => (
-              <Link href="#" key={item} className="mx-4">
+              <Link href="#" key={item} className="mx-4 text-sm">
                 {item}
               </Link>
             ))}
