@@ -15,7 +15,7 @@ export default function DropDown({
       {/* Dropdown Button */}
       <button
         type="button"
-        onMouseEnter={() => setOpen(true)}
+        onMouseEnter={() => setOpen(!open)}
         className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-tr-none rounded-br-none h-[39px]"
       >
         All categories
@@ -38,7 +38,7 @@ export default function DropDown({
       {/* Dropdown Menu */}
       {open && (
         <div
-          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg focus:outline-none"
           onMouseLeave={() => setOpen(false)}
         >
           <div className="py-1">
