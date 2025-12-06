@@ -9,7 +9,7 @@ import { TCategory } from "@/src/lib/types";
 export const Topbar = ({ categories }: { categories: TCategory[] }) => {
   return (
     <header className="bg-brand-header shadow-sm text-white">
-      <Container className=" h-20 flex items-center justify-between">
+      <Container className="h-20 flex items-center justify-between">
         {/* Left: Logo + Category + Search */}
         <div className="flex flex-1 items-center gap-6">
           <Link href="/" className="text-2xl font-bold tracking-tight">
