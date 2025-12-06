@@ -2,6 +2,7 @@ import { getAllProducts } from "@/src/lib/actions/products";
 import Container from "../../layout/container";
 import { ProductCard } from "./ProductCard";
 import { TCategory } from "@/src/lib/types";
+import { Suspense } from "react";
 import { ProductsNav } from "./ProductsNav";
 
 const Products = async ({
@@ -20,7 +21,9 @@ const Products = async ({
           <h2 className="text-2xl text-brand-accent-light ml-10 mb-2">
             Best <span className="text-black">Deals</span>
           </h2>
-          <ProductsNav categories={categories} selected={selectedCategory} />
+          <Suspense fallback={<p>Loading..</p>}>
+            <ProductsNav categories={categories} selected={selectedCategory} />
+          </Suspense>
         </div>
 
         <div className="grid grid-cols-6 gap-4">
