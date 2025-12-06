@@ -4,8 +4,9 @@ import Link from "next/link";
 import DropDown from "../ui/DropDown";
 import SearchInput from "../ui/SearchInput";
 import Container from "./container";
+import { TCategory } from "@/src/lib/types";
 
-export const Topbar = () => {
+export const Topbar = ({ categories }: { categories: TCategory[] }) => {
   return (
     <header className="bg-brand-header shadow-sm text-white">
       <Container className=" h-20 flex items-center justify-between">
@@ -22,7 +23,7 @@ export const Topbar = () => {
             />
           </Link>
           <div className="flex-1 hidden md:flex mx-5 ml-10 max-w-[534px]">
-            <DropDown />
+            <DropDown items={categories} />
             <SearchInput />
           </div>
         </div>

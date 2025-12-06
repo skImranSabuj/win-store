@@ -1,10 +1,14 @@
-"use client"; // Needed if you’re using Next.js App Router
+"use client";
 
+import { TCategory } from "@/src/lib/types";
 import { useState } from "react";
 
-export default function DropDown() {
+export default function DropDown({
+  items: categories,
+}: {
+  items: TCategory[];
+}) {
   const [open, setOpen] = useState(false);
-  const categories = ["Electronics", "Fashion", "Books", "Home & Living"];
 
   return (
     <div className="relative inline-block text-left">
@@ -38,16 +42,16 @@ export default function DropDown() {
           onMouseLeave={() => setOpen(false)}
         >
           <div className="py-1">
-            {categories.map((cat) => (
+            {categories.map((cat: TCategory) => (
               <button
-                key={cat}
+                key={cat.id}
                 className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
                 onClick={() => {
                   setOpen(false);
                   console.log("Selected:", cat);
                 }}
               >
-                {cat}
+                {cat.name}
               </button>
             ))}
           </div>
