@@ -1,4 +1,4 @@
-import MiniBar from "@/src/components/layout/MiniBar";
+import Footer from "@/src/components/layout/Footer";
 import Navbar from "@/src/components/layout/Navbar";
 import { Topbar } from "@/src/components/layout/Topbar";
 import { getCategories } from "@/src/lib/actions/products";
@@ -13,6 +13,7 @@ const layout = async ({ children }: { children: ReactNode }) => {
       <Topbar categories={categories} />
       <Navbar />
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };
