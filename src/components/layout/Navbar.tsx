@@ -8,13 +8,16 @@ const Navbar = () => {
     <div className="bg-brand-nav text-white">
       <Container className="h-[49px] w-full flex-1 flex flex-row justify-between  items-center">
         <div className="flex flex-2">
-          <Image
-            src={icons.menuIcon}
-            alt="Win app logo"
-            width={24}
-            height={24}
-            priority
-          />
+          <div className="h-8 w-8 flex justify-center items-center">
+            <Image
+              src={icons.menuIcon}
+              alt="social logo"
+              width={22}
+              height={22}
+              objectFit="contain"
+              className="h-6 w-auto"
+            />
+          </div>
           <h1 className="mx-3">Brouse By Category</h1>
           <nav className="px-4">
             {[

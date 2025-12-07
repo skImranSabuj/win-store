@@ -1,5 +1,9 @@
+import Banner from "@/src/components/HomePage/Banner";
+
 export default async function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans d"></div>
+    <>
+      <Banner />
+    </>
   );
 }
