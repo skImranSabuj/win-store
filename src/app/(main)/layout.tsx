@@ -6,6 +6,7 @@ import React, { ReactNode } from "react";
 
 const layout = async ({ children }: { children: ReactNode }) => {
   const categories = await getCategories();
+
   console.log({ categories });
   return (
     <div>

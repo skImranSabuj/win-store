@@ -1,10 +1,12 @@
 import { icons, images } from "@/src/assets";
 import Image from "next/image";
 import Link from "next/link";
-import DropDown from "../ui/DropDown";
 import SearchInput from "../ui/SearchInput";
 import Container from "./container";
 import { TCategory } from "@/src/lib/types";
+import dynamic from "next/dynamic";
+
+const DropDown = dynamic(() => import("../ui/DropDown"));
 
 export const Topbar = ({ categories }: { categories: TCategory[] }) => {
   return (

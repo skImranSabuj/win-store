@@ -14,6 +14,11 @@ import menuIcon from "@/src/assets/icons/menu.png";
 // Images
 import bannerBg from "@/src/assets/images/banner-bg.png";
 
+import electronics from "@/src/assets/statics/electronics.png";
+import fashion from "@/src/assets/statics/fashion.png";
+import accappliances from "@/src/assets/statics/appliances.png";
+import stores from "@/src/assets/statics/stores.png";
+
 export const images = {
   logo,
   fbLogo,
@@ -30,4 +35,11 @@ export const icons = {
   headphoneIcon,
   cartIcon,
   menuIcon,
+};
+
+export const statics = {
+  electronics,
+  fashion,
+  accappliances,
+  stores,
 };
