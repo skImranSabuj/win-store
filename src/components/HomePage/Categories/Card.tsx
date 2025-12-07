@@ -10,7 +10,7 @@ const images = [
 
 export const Card = ({ item, index }) => {
   return (
-    <div className="w-[278px] h-[199px] relative overflow-visible ml-2">
+    <div className="w-[278px] h-[199px] relative overflow-visible ml-0.5">
       <Image
         src={images[index % images.length]}
         alt="category image"

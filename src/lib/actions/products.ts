@@ -6,11 +6,19 @@ import { TCategory, TProduct } from "../types";
 const TAG_ALL = "products";
 const TAG_SINGLE = (id: number) => `product:${id}`;
 
-export async function getAllProducts(): Promise<TProduct[]> {
-  const data = await apiFetch<TProduct[]>("/products", {
+export async function getAllProducts(limit?: number): Promise<TProduct[]> {
+  let endPoint = "/products";
+  if (limit) {
+    endPoint += `?limit=${limit}`;
+  }
+  const res = await apiFetch<TProduct[]>(endPoint, {
     next: { revalidate: 60, tags: [TAG_ALL] },
   });
-  return data;
+  if (res?.data) {
+    return res.data;
+  } else {
+    return [];
+  }
 }
 
 export async function getProductById(id: number): Promise<TProduct> {

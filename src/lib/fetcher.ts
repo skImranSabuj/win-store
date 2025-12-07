@@ -11,6 +11,7 @@ export async function apiFetch<T>(
 ): Promise<T> {
   const base = process.env.NEXT_PUBLIC_API_BASE_URL;
   const url = `${base}${path}`;
+  console.log("url: ", url);
   const res = await fetch(url, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
