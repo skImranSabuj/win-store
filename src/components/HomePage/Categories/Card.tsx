@@ -1,4 +1,5 @@
 import { statics } from "@/src/assets";
+import { TCategory } from "@/src/lib/types";
 import Image from "next/image";
 
 const images = [
@@ -8,7 +9,7 @@ const images = [
   statics.stores,
 ];
 
-export const Card = ({ item, index }) => {
+export const Card = ({ item, index }: { item: TCategory; index: number }) => {
   return (
     <div className="w-[278px] h-[199px] relative overflow-visible ml-0.5">
       <Image

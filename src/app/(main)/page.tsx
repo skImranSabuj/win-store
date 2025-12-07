@@ -1,15 +1,23 @@
 import Banner from "@/src/components/HomePage/Banner";
 import Categories from "@/src/components/HomePage/Categories/Categories";
-import NewProducts from "@/src/components/HomePage/NewProducts/NewProducts";
-import Products from "@/src/components/HomePage/NewProducts/Producs";
+import NewProducts from "@/src/components/HomePage/Products/NewProducts";
+import Products from "@/src/components/HomePage/Products/Producs";
+import { getCategories } from "@/src/lib/actions/products";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams?: { category?: string };
+}) {
+  const selectedCategory = searchParams?.category ?? "electronics";
+
+  const categories = await getCategories();
   return (
     <>
       <Banner />
-      <Categories />
+      <Categories categories={categories} />
       <NewProducts />
-      <Products />
+      <Products categories={categories} selectedCategory={selectedCategory} />
     </>
   );
 }

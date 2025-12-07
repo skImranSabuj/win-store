@@ -11,32 +11,27 @@ export async function getAllProducts(limit?: number): Promise<TProduct[]> {
   if (limit) {
     endPoint += `?limit=${limit}`;
   }
-  const res = await apiFetch<TProduct[]>(endPoint, {
-    next: { revalidate: 60, tags: [TAG_ALL] },
+
+  const res = await apiFetch<{ data: TProduct[] }>(endPoint, {
+    revalidate: 60,
+    tags: [TAG_ALL],
   });
-  if (res?.data) {
-    return res.data;
-  } else {
-    return [];
-  }
+
+  return res?.data ?? [];
 }
 
 export async function getProductById(id: number): Promise<TProduct> {
-  const data = await apiFetch<TProduct>(`/products/${id}`, {
-    next: { revalidate: 300, tags: [TAG_SINGLE(id)] },
+  return apiFetch<TProduct>(`/products/${id}`, {
+    revalidate: 300,
+    tags: [TAG_SINGLE(id)],
   });
-  return data;
 }
 
 export async function getCategories(): Promise<TCategory[]> {
-  const res = await apiFetch<{
-    data: TCategory[];
-  }>("/products/categories", {
-    next: { revalidate: 600, tags: ["categories"] },
+  const res = await apiFetch<{ data: TCategory[] }>("/products/categories", {
+    revalidate: 600,
+    tags: ["categories"],
   });
-  if (res?.data) {
-    return res.data;
-  } else {
-    return [];
-  }
+
+  return res?.data ?? [];
 }

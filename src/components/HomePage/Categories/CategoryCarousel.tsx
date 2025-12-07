@@ -6,8 +6,13 @@ import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
 import { Card } from "./Card";
+import { TCategory } from "@/src/lib/types";
 
-export default function CategoryCarousel({ categories }) {
+export default function CategoryCarousel({
+  categories,
+}: {
+  categories: TCategory[];
+}) {
   return (
     <Swiper
       modules={[Navigation]}

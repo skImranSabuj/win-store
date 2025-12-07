@@ -17,7 +17,6 @@ export async function apiFetch<T>(
   const res = await fetch(url, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
-    // If revalidate is provided, use Next.js caching
     ...(opts?.revalidate !== undefined
       ? { next: { revalidate: opts.revalidate, tags: opts.tags } }
       : { cache: "no-store" }),
