@@ -9,7 +9,7 @@ const NewProducts = async () => {
     <Container className="px-12 py-12">
       <div className="px-2">
         <h2 className="text-2xl text-brand-accent-light ml-10 mb-2">
-          New Arrivals
+          New <span className="text-black">Arrivals</span>
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-8">
           {newProducts.map((product) => (

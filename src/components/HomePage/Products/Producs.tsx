@@ -18,7 +18,7 @@ const Products = async ({
       <div className="px-2 mb-4">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-2xl text-brand-accent-light ml-10 mb-2">
-            Best Deals
+            Best <span className="text-black">Deals</span>
           </h2>
           <ProductsNav categories={categories} selected={selectedCategory} />
         </div>
