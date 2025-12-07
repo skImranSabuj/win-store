@@ -28,19 +28,27 @@ export function ProductsNav({
   };
 
   return (
-    <nav className="flex flex-wrap gap-4">
+    <nav className="flex flex-wrap gap-3 md:gap-4 overflow-x-auto py-2 md:py-0">
       {categories.map((cat) => {
         const isActive =
           cat?.name?.toLowerCase() === selected?.toLocaleLowerCase();
+
         return (
           <button
             key={cat.id}
             onClick={() => handleClick(cat.name)}
-            className={`px-4 py-2 text-sm font-medium transition cursor-pointer ${
-              isActive
-                ? "text-brand-accent-light border-b-2 border-brand-accent-dark"
-                : " text-slate-700 hover:text-brand-header"
-            } ${isPending ? "opacity-50 pointer-events-none" : ""}`}
+            className={`
+          px-3 md:px-4 
+          py-1.5 
+          text-sm font-medium whitespace-nowrap
+          transition cursor-pointer 
+          ${
+            isActive
+              ? "text-brand-accent-light border-b-2 border-brand-accent-dark"
+              : "text-slate-700 hover:text-brand-header"
+          }
+          ${isPending ? "opacity-50 pointer-events-none" : ""}
+        `}
           >
             {cat?.name?.toUpperCase()}
           </button>
