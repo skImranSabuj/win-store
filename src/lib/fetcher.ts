@@ -1,7 +1,8 @@
 import "server-only";
 
 type FetchOptions = {
-  next?: { revalidate?: number; tags?: string[] };
+  revalidate?: number;
+  tags?: string[];
   signal?: AbortSignal;
 };
 
@@ -9,14 +10,17 @@ export async function apiFetch<T>(
   path: string,
   opts?: FetchOptions
 ): Promise<T> {
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
   const url = `${base}${path}`;
-  console.log("url: ", url);
+  console.log("url:", url);
+
   const res = await fetch(url, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
-    cache: "no-store",
-    next: opts?.next,
+    // If revalidate is provided, use Next.js caching
+    ...(opts?.revalidate !== undefined
+      ? { next: { revalidate: opts.revalidate, tags: opts.tags } }
+      : { cache: "no-store" }),
     signal: opts?.signal,
   });
 
