@@ -13,6 +13,10 @@ import cartIcon from "@/src/assets/icons/shopping-cart.png";
 import menuIcon from "@/src/assets/icons/menu.png";
 // Images
 import bannerBg from "@/src/assets/images/banner-bg.png";
+import visa from "@/src/assets/images/visa.png";
+import master from "@/src/assets/images/mastercard.png";
+import cash from "@/src/assets/images/cash.png";
+import easy from "@/src/assets/images/easy.png";
 
 import electronics from "@/src/assets/statics/electronics.png";
 import fashion from "@/src/assets/statics/fashion.png";
@@ -26,6 +30,10 @@ export const images = {
   instagramLogo,
   linkedinLogo,
   bannerBg,
+  visa,
+  master,
+  cash,
+  easy,
 };
 
 export const icons = {
